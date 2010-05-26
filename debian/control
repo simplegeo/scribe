@@ -1,0 +1,14 @@
+Source: scribe
+Section: net
+Priority: extra
+Maintainer: Chris Goffinet <cg@chrisgoffinet.com>
+Build-Depends: debhelper (>= 5), autotools-dev, automake, libthrift-dev, libboost1.37-dev, libboost-filesystem1.37-dev, thrift-compiler, thrift-fb303, libevent-dev, python
+Standards-Version: 3.7.2
+
+Package: scribe
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, libthrift0, python-thrift, python, libboost1.37-dev, thrift-fb303
+Description: Scribe is a server for aggregating log data
+ Scribe is a server for aggregating log data streamed in real time from a large number of servers. It is designed to 
+ be scalable, extensible without client-side modification, and robust to failure of the network or any specific 
+ machine.
