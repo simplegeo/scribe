@@ -10,6 +10,8 @@
 # Version:	@(#)skeleton  1.9  26-Feb-2001  miquels@cistron.nl
 #
 
+export PYTHONPATH=$PYTHONPATH:/usr/lib/python2.6/site-packages
+
 PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
 DAEMON=/usr/bin/scribed
 NAME=scribe
