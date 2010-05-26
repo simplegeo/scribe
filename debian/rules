@@ -62,6 +62,7 @@ install: build
 	cp $(CURDIR)/examples/scribe_ctrl $(CURDIR)/debian/scribe/usr/bin
 	mkdir -p $(CURDIR)/debian/scribe/etc/scribe
 	cp $(CURDIR)/debian/scribe.conf $(CURDIR)/debian/scribe/etc/scribe/scribe.conf
+	find ${CURDIR}/debian/scribe -name \*.pyc -exec rm {} \;
 
 # Build architecture-independent files here.
 binary-indep: build install
