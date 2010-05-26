@@ -1,3 +1,35 @@
+scribe (2.2-sg1) lucid; urgency=low
+
+  * Changed libboost dependency from 1.37 to 1.40
+  * Remove .pyc files during build (hacky)
+
+ -- Ben Standefer <ben@simplegeo.com>  Wed, 26 May 2010 18:39:13 +0000
+
+scribe (2.2-digg2ubuntu3) lucid; urgency=low
+
+  * Changed libboost dependency from 1.37 to 1.40
+  * Remove .pyc files during build (hacky)
+
+ -- Ben Standefer <ben@simplegeo.com>  Wed, 26 May 2010 18:38:46 +0000
+
+scribe (2.2-digg2ubuntu2) lucid; urgency=low
+
+  [ Ben Standefer ]
+  * Changed libboost dependency from 1.37 to 1.40
+  * Remove .pyc files during build (hacky)
+
+ -- root <root@domU-12-31-39-06-69-61.compute-1.internal>  Wed, 26 May 2010 18:37:46 +0000
+
+scribe (2.2-digg2ubuntu1) lucid; urgency=low
+
+  [ Ben Standefer ]
+  * Changed libboost dependency from 1.37 to 1.40
+  * Remove .pyc files during build (hacky)
+
+  [ root ]
+
+ -- root <root@domU-12-31-39-06-69-61.compute-1.internal>  Wed, 26 May 2010 18:37:24 +0000
+
 scribe (2.2-digg2) unstable; urgency=low
 
   * Bumped version
