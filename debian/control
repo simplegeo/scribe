@@ -1,13 +1,14 @@
 Source: scribe
 Section: net
 Priority: extra
-Maintainer: Chris Goffinet <cg@chrisgoffinet.com>
+Maintainers: SimpleGeo Nerds <nerds@simplegeo.com>
+Uploaders: Chris Goffinet <cg@chrisgoffinet.com>, Ian Eure <ian@simplegeo.com>
 Build-Depends: debhelper (>= 5), autotools-dev, automake, libthrift-dev, libboost-dev (>= 1.40), libboost-filesystem-dev (>= 1.40), thrift-compiler, thrift-fb303, libevent-dev, python, libhdfs0-dev (>= 0.20), sun-java6-jdk (>= 6.0)
-Standards-Version: 3.7.2
+Standards-Version: 3.8.4
 
 Package: scribe
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, libthrift0, python-thrift, python, thrift-fb303
+Depends: ${shlibs:Depends}, ${misc:Depends}, libthrift0, python-thrift, python, thrift-fb303, sun-java6-jre
 Description: Facebook's distributed, streaming log server
  Scribe is a server for aggregating log data streamed in real time
  from a large number of servers. It is designed to be scalable,
