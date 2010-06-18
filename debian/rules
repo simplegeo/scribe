@@ -14,9 +14,12 @@
 # from having to guess our platform (since we know it already)
 DEB_HOST_GNU_TYPE   ?= $(shell dpkg-architecture -qDEB_HOST_GNU_TYPE)
 DEB_BUILD_GNU_TYPE  ?= $(shell dpkg-architecture -qDEB_BUILD_GNU_TYPE)
+DEB_BUILD_ARCH      ?= $(shell dpkg-architecture -qDEB_BUILD_ARCH)
+LD_LIBRARY_PATH     += :/usr/lib/jvm/java-6-sun/jre/lib/$(DEB_BUILD_ARCH)/server
 
 
-CFLAGS=-Wall -g 
+CFLAGS=-Wall -g -I/usr/lib/jvm/java-6-sun/include -I/usr/lib/jvm/java-6-sun/include/linux -L/usr/lib/jvm/java-6-sun/jre/lib/$(DEB_BUILD_ARCH)/server
+LDFLAGS=-Wl,-z,defs
 
 ifneq (,$(findstring noopt,$(DEB_BUILD_OPTIONS)))
 	CFLAGS += -O0
@@ -24,11 +27,14 @@ else
 	CFLAGS += -O2
 endif
 
-config.status: 
+config.status:
 	dh_testdir
 	# Add here commands to configure the package.
 	$(CURDIR)/bootstrap.sh
-	$(CURDIR)/configure --prefix=/usr --with-thriftpath=/usr --with-fb303path=/usr CFLAGS="$(CFLAGS)" LDFLAGS="-Wl,-z,defs"
+	$(CURDIR)/configure --prefix=/usr --with-thriftpath=/usr \
+                        --with-fb303path=/usr \
+                        --enable-hdfs --with-hadooppath=/usr/lib \
+    CFLAGS="$(CFLAGS)" LDFLAGS="$(LDFLAGS)" CXXFLAGS="$(CFLAGS)"
 
 build: build-stamp
 
@@ -44,15 +50,15 @@ build-stamp:  config.status
 clean:
 	dh_testdir
 	dh_testroot
-	rm -f build-stamp 
+	rm -f build-stamp
 
 	# Add here commands to clean up after the build process.
-	dh_clean 
+	dh_clean
 
 install: build
 	dh_testdir
 	dh_testroot
-	dh_clean -k 
+	dh_clean -k
 	dh_installdirs
 
 	# Add here commands to install the package into debian/scribe.
@@ -72,12 +78,12 @@ binary-indep: build install
 binary-arch: build install
 	dh_testdir
 	dh_testroot
-	dh_installchangelogs 
+	dh_installchangelogs
 	dh_installdocs
 	dh_installexamples
 #	dh_install
 #	dh_installmenu
-#	dh_installdebconf	
+#	dh_installdebconf
 #	dh_installlogrotate
 #	dh_installemacsen
 #	dh_installpam
@@ -100,4 +106,4 @@ binary-arch: build install
 	dh_builddeb
 
 binary: binary-indep binary-arch
-.PHONY: build clean binary-indep binary-arch binary install 
+.PHONY: build clean binary-indep binary-arch binary install

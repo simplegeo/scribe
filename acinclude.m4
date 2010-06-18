@@ -74,14 +74,14 @@ AC_ARG_ENABLE([opt],
      ENABLED_OPT="yes"
   ]
 )
-if test "$ENABLED_OPT" = "yes"
-then
-     CFLAGS="-Wall -O3"
-     CXXFLAGS="-Wall -O3"
-else
-     CFLAGS="-Wall -g"
-     CXXFLAGS="-Wall -g"
-fi
+#if test "$ENABLED_OPT" = "yes"
+#then
+#     CFLAGS="-Wall -O3 -I/usr/lib/jvm/java-6-sun-1.6.0.20/include -I/usr/lib/jvm/java-6-sun-1.6.0.20/include/linux -L/usr/lib/jvm/java-6-sun/jre/lib/$(DEB_BUILD_ARCH)/server"
+#     CXXFLAGS="-Wall -O3 -I/usr/lib/jvm/java-6-sun-1.6.0.20/include -I/usr/lib/jvm/java-6-sun-1.6.0.20/include/linux -L/usr/lib/jvm/java-6-sun/jre/lib/$(DEB_BUILD_ARCH)/server"
+#else
+#     CFLAGS="-Wall -g"
+#     CXXFLAGS="-Wall -g"
+#fi
 AC_MSG_RESULT($ENABLED_OPT)
 AM_CONDITIONAL([OPT], [test "$ENABLED_OPT" = yes])
 AM_CONDITIONAL([DEBUG], [test "$ENABLED_OPT" = no])
@@ -100,14 +100,14 @@ AC_ARG_ENABLE([debug],
      ENABLED_DEBUG="yes"
   ]
 )
-if test "$ENABLED_DEBUG" = "yes"
-then
-     CFLAGS="-Wall -g"
-     CXXFLAGS="-Wall -g"
-else
-     CFLAGS="-Wall -O3"
-     CXXFLAGS="-Wall -O3"
-fi
+#if test "$ENABLED_DEBUG" = "yes"
+#then
+#     CFLAGS="-Wall -g"
+#     CXXFLAGS="-Wall -g"
+#else
+#     CFLAGS="-Wall -O3"
+#     CXXFLAGS="-Wall -O3"
+#fi
 AC_MSG_RESULT($ENABLED_DEBUG)
 AM_CONDITIONAL([DEBUG], [test "$ENABLED_DEBUG" = yes])
 AM_CONDITIONAL([OPT], [test "$ENABLED_DEBUG" = no])

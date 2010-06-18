@@ -2,7 +2,7 @@ Source: scribe
 Section: net
 Priority: extra
 Maintainer: Chris Goffinet <cg@chrisgoffinet.com>
-Build-Depends: debhelper (>= 5), autotools-dev, automake, libthrift-dev, libboost-dev (>= 1.40), libboost-filesystem-dev (>= 1.40), thrift-compiler, thrift-fb303, libevent-dev, python
+Build-Depends: debhelper (>= 5), autotools-dev, automake, libthrift-dev, libboost-dev (>= 1.40), libboost-filesystem-dev (>= 1.40), thrift-compiler, thrift-fb303, libevent-dev, python, libhdfs0-dev (>= 0.20), sun-java6-jdk (>= 6.0)
 Standards-Version: 3.7.2
 
 Package: scribe
