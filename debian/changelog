@@ -1,3 +1,12 @@
+scribe (2.2-sg8) lucid; urgency=low
+
+  [ Ian Eure ]
+  * Fix scribe version in setup.py
+
+  [ SimpleGeo Nerds ]
+
+ -- SimpleGeo Nerds <nerds@simplegeo.com>  Fri, 18 Jun 2010 22:33:24 +0000
+
 scribe (2.2-sg7) lucid; urgency=low
 
   * UNRELEASED
