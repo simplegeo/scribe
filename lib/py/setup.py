@@ -1,7 +1,7 @@
 from distutils.core import setup
 
 setup(name='scribe',
-      version='2.0',
+      version='2.2',
       packages=['scribe'],
       )
 
