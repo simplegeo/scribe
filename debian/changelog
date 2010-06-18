@@ -1,3 +1,30 @@
+scribe (2.2-sg4) lucid; urgency=low
+
+  [ Ben Standefer ]
+  * Correct PYTHONPATH so that the init script works with Ubuntu 10.04
+
+  [ Benoit Sigoure ]
+  * Fix the packaging and the code to work with the latest HDFS. *
+    Makefile.am: Specify ACLOCAL_AMFLAGS so that... * bootstrap.sh: ...
+    autoreconf can be used instead of manually invoking
+    aclocal/automake/autoconf. * configure.ac: Use AC_CONFIG_MACRO_DIR
+    to match ACLOCAL_AMFLAGS and call   AM_INIT_AUTOMAKE with the
+    `foreign' argument to specify that isn't   supposed to be a GNU
+    package. * src/HdfsFile.cpp: Remove CPP guards that are now
+    unnecessary since we... * src/Makefile.am: ... conditionnally
+    compile HdfsFile.cpp depending on   whether or not HDFS support was
+    enabled at configure time.   Also specify the additional
+    EXTERNAL_LIBS needed for HDFS support. Signed-off-by: Benoit Sigoure
+    <tsuna@stumbleupon.com>
+
+  [ Ian Eure ]
+  * Fix boost deps, update & reflow description, declare source format.
+  * Build with HDFS support.
+
+  [ SimpleGeo Nerds ]
+
+ -- SimpleGeo Nerds <nerds@simplegeo.com>  Fri, 18 Jun 2010 22:16:10 +0000
+
 scribe (2.2-sg1) lucid; urgency=low
 
   * Changed libboost dependency from 1.37 to 1.40
