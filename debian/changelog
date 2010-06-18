@@ -1,3 +1,13 @@
+scribe (2.2-sg9) lucid; urgency=low
+
+  [ Ian Eure ]
+  * Update standards-version, maintainers/uploaders, depend on sun-
+    java6-jre.
+
+  [ SimpleGeo Nerds ]
+
+ -- SimpleGeo Nerds <nerds@simplegeo.com>  Fri, 18 Jun 2010 22:57:31 +0000
+
 scribe (2.2-sg8) lucid; urgency=low
 
   [ Ian Eure ]
